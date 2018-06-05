@@ -78,10 +78,10 @@ $('#ruches').on('change', function() {
       arr = JSON.parse(data);
       string = '';
       for(i=0; i < arr.length; i++){
-        string += "<tr><td></td><td>" +
+        string += "<tr><td align='center'><input type='checkbox' id='checkItem'></td><td>" +
         arr[i].dateEtat +
         "</td><td>" +
-        arr[i].Poids +
+      arr[i].Poids +
         "</td><td>" +
         arr[i].Temperature +
         "</td><td>" +
