@@ -16,12 +16,11 @@ while($rs=mysqli_fetch_array($query)){
   $tableau = '<tbody>';
   while($trs=mysqli_fetch_array($sql)){
     $tableau .='<tr>';
-        $tableau.='<td></td>';
+        $tableau.='<td align="center"><input type="checkbox" id="checkItem"></td>';
         $tableau.='<td>'.$trs['dateEtat'].'</td>';
         $tableau.='<td>'.$trs['Poids'].'</td>';
         $tableau.='<td>'.$trs['Temperature'].'</td>';
         $tableau.='<td>'.$trs['Humidite'].'</td>';
-        $tableau.='<td>'.$trs['idRuche'].'</td>';
     $tableau.='</tr>';
     }
     $tableau.='</tbody>';
@@ -53,15 +52,14 @@ while($rs=mysqli_fetch_array($query)){
     </div>
 
     <div class="col-sm-9">
-        <table class='table table-bordered'>
+        <table class='table table-bordered' id='tableauEtat'>
           <thead>
               <tr>
-                <th scope="col"></th>
+                <th scope="col-center"><input type="checkbox"  id="selectAll"></th>
                 <th scope="col">Date</th>
                 <th scope="col">Poids</th>
                 <th scope="col">Temperature</th>
                 <th scope="col">Humidité</th>
-                <th scope="col">IdRuche</th>
               </tr>
           </thead>
           <?php echo $tableau ?>
@@ -77,10 +75,28 @@ $('#ruches').on('change', function() {
     url : 'tableau.php',
     data : 'idRuche='+ idRuche,
     success : function(data){
-      alert(data);
-    }
-  })
-  });
+      arr = JSON.parse(data);
+      string = '';
+      for(i=0; i < arr.length; i++){
+        string += "<tr><td></td><td>" +
+        arr[i].dateEtat +
+        "</td><td>" +
+        arr[i].Poids +
+        "</td><td>" +
+        arr[i].Temperature +
+        "</td><td>" +
+        arr[i].Humidite +
+        "</td></tr>";
+      }
+
+      $('#tableauEtat tbody').html(string);
+  }
+});
+});
+
+$('#SelectAll').click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
 
 </script>
 </html>
