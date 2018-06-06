@@ -5,7 +5,15 @@ $idRuche = $_POST['idRuche'];
 
 if(!isset($idRuche)){
   echo $idRuche;
-}else {
+}else if($idRuche === "all"){
+  $sql=$conn->query("SELECT * FROM etat");
+  $data=[];
+  $data= mysqli_fetch_all($sql, MYSQLI_ASSOC);
+
+    echo json_encode($data);
+  
+
+  }else {
   $sql=$conn->query("SELECT * FROM etat where idruche = $idRuche");
   $data=[];
 $data= mysqli_fetch_all($sql, MYSQLI_ASSOC);

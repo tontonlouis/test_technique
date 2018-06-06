@@ -4,7 +4,7 @@ $conn = new mysqli('127.0.0.1','root','', 'test_technique');
 
 //query
 $query=$conn->query("SELECT idRuche, nomRuche FROM ruche");
-$select = '<select id="ruches">';
+$select = '<select id="ruches"><option value="all"></option>';
 while($rs=mysqli_fetch_array($query)){
   $select.='<option value='. $rs["idRuche"].'>' . $rs["nomRuche"] . '</option>';
 
