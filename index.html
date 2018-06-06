@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="assets/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.js"></script>
+  <link href="assets/css/tuto.css" rel="stylesheet" id="tuto-css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
   <!-- Bandeau de navigation -->
   <nav class="navbar navbar-inverse">
@@ -24,7 +25,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Profile</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+          <li><a href="#">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -56,90 +57,95 @@
           <textarea class="form-control" rows="10" id="comment" placeholder="Please enter message"></textarea>
 
         </div>
-          <h4><small>Message Type</small></h4>
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Message Type
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>Email + Push</li>
-              <li>Email</li>
-              <li>Push</li>
+        <h4><small>Message Type</small></h4>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Message Type
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="message"><a role="menuitem" tabindex="-1" href="#">Email + Push</a></li>
+              <li role="message"><a role="menuitem" tabindex="-1" href="#">Email</a></li>
+              <li role="message"><a role="menuitem" tabindex="-1" href="#">Push</a></li>
             </ul>
           </div>
           <h4><small>Send to Group</small></h4>
-          <div class="checkbox checkbox-default">
-            <label>
-              <input type="checkbox" value="">Top Management</label>
-            </div>
-            <div class="checkbox checkbox-default">
-              <label><input type="checkbox" value="">Marketing Departement</label>
-            </div>
-            <div class="checkbox checkbox-default">
-              <label><input type="checkbox" value="">Design Departement</label>
-            </div>
 
-            <div class="checkbox checkbox-default">
-              <label><input type="checkbox" value="">Financial Departement</label>
+          <div class="form-check">
+    					<label>
+    						<input type="checkbox" name="check" checked> <span class="label-text">Marketing Departement</span>
+    					</label>
+    				</div>
+    				<div class="form-check">
+    					<label>
+    						<input type="checkbox" name="check"> <span class="label-text">Design Departement</span>
+    					</label>
+    				</div>
+    				<div class="form-check">
+    					<label>
+    						<input type="checkbox" name="check"> <span class="label-text">Financial Departement</span>
+    					</label>
+    				</div>
+            <div class="form-check">
+              <label>
+                <input type="checkbox" name="check"> <span class="label-text">Supply Departement</span>
+              </label>
             </div>
-            <div class="checkbox checkbox-default">
-              <label><input type="checkbox" value="">Supply Departement</label>
-            </div>
-            <br/>
-             <button type="submit" class="btn btn-primary btn-lg">Valider</button>
-              <button type="cancel" class="btn btn-default btn-lg">Annuler</button>
+          <br/>
+          <button type="submit" class="btn btn-primary btn-lg">Valider</button>
+          <button type="cancel" class="btn btn-default btn-lg">Annuler</button>
         </div>
 
 
-      <!-- Section en haut à droite -->
-      <div class="col-sm-3">
-        <div class="well">
-          <div class="thumbnail">
-            <img src="images/image.jpg" alt="">
-            <div class="caption">
-              <h4>Thumbnail label</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-              <p>
-                <a href="#" class="btn btn-info" role="button">Button</a>
-                <a href="#" class="btn btn-default" role="button">Button</a>
-              </p>
+        <!-- Section en haut à droite -->
+        <div class="col-sm-3">
+          <div class="well">
+            <div class="thumbnail">
+              <img src="images/image.jpg" alt="" height="200" width="320">
+              <div class="caption">
+                <h4>Thumbnail label</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+                <p>
+                  <a href="#" class="btn btn-info" role="button">Button</a>
+                  <a href="#" class="btn btn-default" role="button">Button</a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- section en bas à droite -->
-        <div class="well">
-          <h4><small>Tap Target</small></h4>
-          <div class="form-group">
-            <select class="form-control" id="sel1">
-              <option selected="selected">Profile Screen</option>
-              <option>Ruche Bleu</option>
-              <option>Ruche Rouge</option>
-              <option>Ruche Jaune</option>
-            </select>
+          <!-- section en bas à droite -->
+          <div class="well">
+            <h4><small>Tap Target</small></h4>
+            <div class="form-group">
+              <select class="form-control" id="sel1">
+                <option selected="selected">Profile Screen</option>
+                <option>Ruche Bleu</option>
+                <option>Ruche Rouge</option>
+                <option>Ruche Jaune</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <h4><small>Set Type</small></h4>
+              <div class="radio">
+                <label><input type="radio" name="optradio"><span class="label label-success">News</span></label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"><span class="label label-info">Reports</span></label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"><span class="label label-warning">Documents</span></label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"><span class="label label-primary">Media</span></label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"><span class="label label-default">Text</span></label>
+              </div>
+              <br/>
+              <button type="button" class="btn btn-danger btn-lg">Supprimer</button>
+            </form></div>
           </div>
-          <div class="form-group">
-            <h4><small>Set Type</small></h4>
-            <div class="radio">
-              <label><input type="radio" name="optradio"><span class="label label-success">News</span></label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="optradio"><span class="label label-info">Reports</span></label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="optradio"><span class="label label-warning">Documents</span></label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="optradio"><span class="label label-primary">Media</span></label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="optradio"><span class="label label-default">Text</span></label>
-            </div>
-            <br/>
-            <button type="button" class="btn btn-danger btn-lg">Supprimer</button>
-          </form></div>
         </div>
       </div>
-</div>
     </div>
-</body>
-</html>
+  </body>
+
+
+  </html>

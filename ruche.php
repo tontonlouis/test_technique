@@ -33,25 +33,24 @@ while($rs=mysqli_fetch_array($query)){
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-3 sidenav">
+    <div class="col-sm-1 sidenav">
       <h4>Ruches</h4>
-
-  <div class="btn-group">
-<?php echo $select ?>
-  </div>
-<br>
-</div>
-<br>
-    </div>
-
-    <div class="col-sm-9">
+        <div class="btn-group">
+          <?php echo $select ?>
+        </div>
+        <br> <br>
+   </div>
+   <br>
+  <div class="col-sm-11">
         <table class='table table-bordered' id='tableauEtat'>
           <thead>
               <tr>
@@ -67,6 +66,7 @@ while($rs=mysqli_fetch_array($query)){
 </div>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+
 <script>
 $('#ruches').on('change', function() {
   var idRuche = this.value;
